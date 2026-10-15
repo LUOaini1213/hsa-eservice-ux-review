@@ -27,7 +27,7 @@ An independent usability review of two public Health Sciences Authority (HSA) e-
 | Steps | 30 | 11 | -63.3% |
 | Page loads | 19 | 2 | -89.5% |
 | Interpretive decisions | 9 | 0 | replaced by 8 factual questions |
-| KLM time | 97 s | 42.6 s | -56.1% |
+| KLM time | 97 s | 42.7 s | -56% |
 | Reading, upper bound | 28:45 | 4:13 | -85.4% |
 
 Across 27 combinations of operator times and reading speeds the KLM reduction stays between 55.6% and 56.7%. These are model estimates; the [test plan](testing/usability-test-plan.md) is designed to check them with people. Full numbers: [klm-results.md](review/klm-results.md).

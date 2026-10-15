@@ -1,1 +1,11 @@
-{ "_note": "Median of 3 GETs of the published prototype page, measured with scripts/measure_pages.py after deployment. null until measured.", "pagesMedianResponseSeconds": null }
+{
+  "_note": "Median of 3 GETs of the published prototype page, measured with scripts/measure_pages.py after deployment, same method as evidence/sources.csv.",
+  "url": "https://luoaini1213.github.io/hsa-eservice-ux-review/",
+  "measuredUtc": "2026-10-15T09:12:35Z",
+  "samplesSeconds": [
+    1.439,
+    0.628,
+    0.621
+  ],
+  "pagesMedianResponseSeconds": 0.628
+}

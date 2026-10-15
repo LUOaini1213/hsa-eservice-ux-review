@@ -2,7 +2,7 @@
 # Task analysis numbers
 
 Operator times: K 0.28 s, P 1.1 s, B 0.1 s, H 0.4 s, M 1.35 s (Card, Moran and Newell; Kieras 2001).
-System response R is the median of three HTML requests per page (evidence/sources.csv): HSA pages median 0.597 s; prototype 0.597 s (not yet measured, HSA median used).
+System response R is the median of three HTML requests per page (evidence/sources.csv): HSA pages median 0.597 s; prototype 0.628 s (measured on GitHub Pages).
 Reading time is outside KLM and is an upper bound: every word of each page visited, read once, at 238 words per minute.
 
 ## Journey A: find licences, route, fees and documents (persona P1, Class B importer and wholesaler)
@@ -18,12 +18,12 @@ Reading time is outside KLM and is an upper bound: every word of each page visit
 | Points where the user must interpret rules or do arithmetic | 9 | 0 |
 | Factual questions answered | 0 | 8 |
 | Mental operators (M) | 34 | 13 |
-| KLM time (operators + response) | 97 s (1:37) | 42.6 s (0:43) |
+| KLM time (operators + response) | 97 s (1:37) | 42.7 s (0:43) |
 | Words on pages visited | 6841 | 1002 |
 | Reading time, upper bound | 1724.6 s (28:45) | 252.6 s (4:13) |
 | KLM + reading | 30:22 | 4:55 |
 
-Reduction: steps 63.3%, page loads 89.5%, clicks 33.3%, KLM time 56.1%, reading 85.4%, KLM + reading 83.8%.
+Reduction: steps 63.3%, page loads 89.5%, clicks 33.3%, KLM time 56%, reading 85.4%, KLM + reading 83.8%.
 Across 27 combinations of K (0.2, 0.28, 0.5), M (1.2, 1.35, 1.5) and reading speed (200, 238, 300 wpm), the KLM reduction ranges 55.6% to 56.7% and KLM + reading 83.3% to 84.1%.
 
 Persona P2 (Class C importer, EU and TGA approvals via the MRA): prototype 12 steps, KLM 46.6 s.

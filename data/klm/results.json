@@ -10,8 +10,8 @@
   ],
   "responseSeconds": {
     "hsaMedian": 0.597,
-    "prototype": 0.597,
-    "prototypeMeasured": false
+    "prototype": 0.628,
+    "prototypeMeasured": true
   },
   "journeyA": {
     "asis": {
@@ -56,7 +56,7 @@
       },
       "operatorSeconds": 41,
       "responseSeconds": 1.7,
-      "klmSeconds": 42.6,
+      "klmSeconds": 42.7,
       "wordsRead": 1002,
       "readingSeconds": 252.6
     },
@@ -87,7 +87,7 @@
       "steps": 63.3,
       "pageLoads": 89.5,
       "clicks": 33.3,
-      "klmSeconds": 56.1,
+      "klmSeconds": 56,
       "readingSeconds": 85.4,
       "totalSeconds": 83.8
     }
