@@ -1,0 +1,30 @@
+{
+  "id": "B-user",
+  "title": "Journey B2, current state: a device user at a GP clinic reports an adverse event with HSA's FormSG e-form",
+  "persona": "P4",
+  "task": "A nurse at a GP clinic (not one of the hospitals in the drop-down) reports a device problem using the photo-of-label option. Modelled up to and including the Submit click; nothing was submitted in this review.",
+  "assumptions": [
+    "Field list, types and required flags come from the form's public definition (S26) read on 2026-10-15.",
+    "The facility drop-down has 36 named hospitals plus 'Other'; a GP clinic must choose 'Other' and type its name.",
+    "Typed lengths are assumptions: description 300 characters.",
+    "File dialog for the photo is modelled as P + B B to open, P + B B B B to pick the file, with an unmeasured 0 s response."
+  ],
+  "navigation": [
+    { "action": "Open 'Report adverse events'", "ops": "R:S23", "read": ["S23"] },
+    { "action": "Click 'E-form' in the Medical Devices row", "ops": "M P B B R:S26", "read": ["S26"] }
+  ],
+  "fields": [
+    { "label": "Name", "kind": "text", "chars": 20 },
+    { "label": "Healthcare facility name (choose 'Other')", "kind": "dropdown" },
+    { "label": "Other healthcare facility name", "kind": "text", "chars": 30 },
+    { "label": "Email address", "kind": "text", "chars": 25 },
+    { "label": "Description", "kind": "text", "chars": 300 },
+    { "label": "Date of incident", "kind": "text", "chars": 10 },
+    { "label": "Are you submitting the device information as a photo? (Yes)", "kind": "check" },
+    { "label": "Photo of device label", "kind": "upload" },
+    { "label": "Consent to share contact details with supplier", "kind": "check" }
+  ],
+  "finish": [
+    { "action": "Review and click Submit (not performed in this review)", "ops": "M P B B" }
+  ]
+}

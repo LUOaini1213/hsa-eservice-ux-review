@@ -1,0 +1,26 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Unit and integrity tests
+        run: node --test tests/*.test.mjs
+      - name: Generated files are up to date
+        run: |
+          node scripts/klm.mjs --check
+          node scripts/render_issues.mjs --check
+      - name: Mutation check (every mutant of docs/rules.js must be killed)
+        run: node tests/mutate.mjs
+      - name: Negative control (the mutation check must fail on a weak suite)
+        run: |
+          if node tests/mutate.mjs --tests tests/fixtures/weak.test.mjs; then
+            echo "Mutation check passed with a weak suite, so it cannot be trusted"; exit 1
+          fi
+          echo "Mutation check correctly failed on the weak suite"

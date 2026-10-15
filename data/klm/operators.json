@@ -1,0 +1,15 @@
+{
+  "_note": "Keystroke-Level Model operator times in seconds. K, P, B, H, M from Card, Moran & Newell (1980/1983) as summarised by Kieras (2001), 'Using the Keystroke-Level Model to Estimate Execution Times'. R (system response) is measured per page in evidence/sources.csv (median of 3 HTML GETs, a lower bound on perceived load). Reading time is NOT part of KLM; it is reported separately as an upper bound using the mean silent reading rate for English non-fiction from Brysbaert (2019), 'How many words do we read per minute?', Journal of Memory and Language 109.",
+  "K": 0.28,
+  "K_note": "average non-secretary typist, about 40 wpm",
+  "P": 1.1,
+  "B": 0.1,
+  "H": 0.4,
+  "M": 1.35,
+  "readingWpm": 238,
+  "sensitivity": {
+    "K": [0.2, 0.28, 0.5],
+    "M": [1.2, 1.35, 1.5],
+    "readingWpm": [200, 238, 300]
+  }
+}

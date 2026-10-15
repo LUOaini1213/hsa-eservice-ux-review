@@ -1,0 +1,36 @@
+{
+  "S18": {
+    "nodes": 15,
+    "questions": 12,
+    "results": 3,
+    "resultsLinkingToRequirementsTool": 1,
+    "longestQuestionPath": 11,
+    "progressTotalShown": 15,
+    "linkTargetsInResults": [
+      "/hsa/mdc/medical-devices",
+      "/hsa/mdc/risk-classification"
+    ]
+  },
+  "S19": {
+    "questions": 83,
+    "results": 52,
+    "resultsLinkingToRequirementsTool": 51,
+    "longestQuestionPath": 21,
+    "progressTotalShown": null,
+    "linkTargetsInResults": [
+      "/hsa/mdc/is-medical-device",
+      "/hsa/mdc/medical-devices"
+    ]
+  },
+  "S20": {
+    "questions": 86,
+    "results": 18,
+    "resultsLinkingToRequirementsTool": 12,
+    "longestQuestionPath": 8,
+    "progressTotalShown": null,
+    "linkTargetsInResults": [
+      "/hsa/mdc/medical-devices",
+      "/hsa/mdc/risk-classification"
+    ]
+  }
+}

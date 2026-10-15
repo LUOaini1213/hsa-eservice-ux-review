@@ -1,0 +1,81 @@
+issue_id,source_id,type,evidence,target
+A-01,S03,link,Check device's route,https://www.google.com
+A-01,S03,quote,Answer a few questions to find out the requirements for your device's registration route and whether you need to apply for a license.,
+A-02,S04,link,Registration and licensing requirements,https://www.hsa.gov.sg/medical-devices/registration/requirements
+A-02,S04,quote,Find out the requirements for your device's registration route and whether you need to apply for a licence.,
+A-02,S18,link,check the registration and licensing requirements,https://selfhelp.hsa.gov.sg/hsa/mdc/medical-devices
+A-02,S19,link,registration and licensing requirements,https://selfhelp.hsa.gov.sg/hsa/mdc/medical-devices
+A-02,S20,link,check your registration and licensing requirements,https://selfhelp.hsa.gov.sg/hsa/mdc/medical-devices
+A-02,S19,data,resultsLinkingToRequirementsTool = 51 of 52 results,evidence/selfhelp-trees.json
+A-03,S03,quote,No prior rejection/withdrawal by us or any overseas reference regulatory agencies,
+A-03,S03,quote,ECR-2/EDR: Approval from at least two of our overseas reference regulatory agencies No prior rejection/withdrawal by us or any overseas reference regulatory agencies,
+A-03,S06,quote,Condition 2 Approved by at least two of our independent reference regulatory agencies .,
+A-03,S06,quote,"Note: If your Class B medical device is approved by both EU and TGA, it will only be considered one approval.",
+A-03,S08,quote,Approvals from EU and TGA will qualify as independent reference regulatory agency approvals only if devices have been reviewed and approved by the respective agencies and not registered based on the Mutual Recognition Agreement (MRA).,
+A-03,S10,quote,You are eligible to register your Class D medical device via the expedited evaluation route (EDR) if it is currently approved by at least two of our independent reference regulatory agencies .,
+A-04,S06,quote,"Error in the eligibility will result in a forfeit of your device registration, and you will be required to re-apply for the registration via other evaluation routes (fees apply).",
+A-04,S28,quote,Fees paid previously are non-refundable.,
+A-05,S06,quote,Standalone medical mobile applications It is solely a standalone medical mobile application.,
+A-05,S03,quote,"Immediate routes, solely for standalone medical mobile applications: Class B Class C",
+A-06,S14,quote,Licensed importers require a Wholesaler's licence for wholesale supply.,
+A-06,S14,quote,"However, a wholesaler's licence is not required for supply to end-users, such as in a retail store.",
+A-06,S14,quote,Licensed manufacturers do not require a Wholesaler's licence to supply medical devices which are manufactured under their Manufacturer's licence.,
+A-06,,data,"journeyA.asis: 19 page loads, 13 distinct, 2 dead ends, 9 decisions",data/klm/results.json
+A-07,S11,quote,Fees are payable via GIRO ( apply eGIRO ) or eNETS,
+A-07,S17,quote,Payment modes available: GIRO or Online Payment (card or PayNow through STRIPE payment portal),
+A-07,S17,quote,Cheques will not be accepted for any transaction.,
+A-08,S11,quote,"Application fees for any Class B, C or D device registration $560",
+A-09,S07,link,Letter of Authorisation,https://www.hsa.gov.sg/medical-devices/guidance-documents/
+A-09,S07,link,Declaration of Conformity,https://www.hsa.gov.sg/medical-devices/guidance-documents/
+A-09,S07,link,List of Configurations of medical devices,https://www.hsa.gov.sg/medical-devices/guidance-documents/
+A-09,S07,link,Essential Principles Checklist,https://www.hsa.gov.sg/medical-devices/guidance-documents/
+A-09,S14,link,Declaration of Conformity to a QMS,https://www.hsa.gov.sg/medical-devices/guidance-documents/
+A-09,S14,link,Guide to new application for medical device dealer's licence,https://www.hsa.gov.sg/e-services/share-medical-device/
+A-09,S16,quote,"HSA SHARE Applicant User Manual [PDF, 25.8 MB]",
+A-10,S03,quote,Approval from at least one of our overseas reference regulatory agencies,
+A-10,S07,quote,approved by at least one of our independent reference regulatory agencies,
+A-10,S25,quote,Special Authorisation Route Licence No.,
+A-10,S16,quote,Special Access Route (SAR),
+A-11,S18,quote,Question 1 of 15,
+A-11,S18,data,"12 questions, 3 results, longest path 11",evidence/selfhelp-trees.json
+A-12,S18,quote,Last Updated: 10/15/2026,
+A-12,S11,quote,Last updated on 26 March 2026,
+A-18,S11,quote,Last updated on 26 March 2026,
+A-18,S11,html,last updated on 15 October 2026,
+A-18,S04,quote,Last updated on 25 May 2026,
+A-18,S04,html,last updated on 15 October 2026,
+A-13,S21,quote,<loc>https://localhost:3000/</loc>,
+A-13,S21,quote,<loc>https://localhost:3000/services</loc>,
+A-14,S22,quote,"With effect from 2 June 2026, HSA will be obsoleting the ""IVD Cluster"" grouping currently found in GN-12-1.",
+A-14,S22,quote,The feedback window is open until 31 July 2026 .,
+A-14,S20,quote,"In accordance with GN-12-1 R3, IVD Cluster grouping has been removed and is no longer applicable.",
+A-15,S09,quote,ISO 13485 MSDAP,
+A-15,S10,quote,"Proof of at least one Quality Management System, for example:",
+A-15,S07,quote,Proof of at least one Quality Management System below:,
+A-16,S03,data,EU recognised approvals cell = 282 words,evidence/snapshots/S03.html
+A-17,S02,link,Quick Guide,https://go.gov.sg/quickguideapr2026
+A-17,S23,quote,"Download form [PDF, 297 KB]",
+B-01,S24,quote,Keep the email size under 2MB.,
+B-01,S25,quote,"This form, once completed, and any attachment should be submitted via email to hsa_medical_device@hsa.gov.sg.",
+B-01,S25,quote,This reference no. would only become available after the initial report has been submitted.,
+B-01,S23,link,E-form,https://form.gov.sg/#!/5c89abc277ef5300174c1ec7
+B-02,S25,quote,This form may take you 15 minutes to fill in. You will need to prepare some information to fill in the form.,
+B-02,,data,"journeyB.dealerWordForm: 756.3 s, 1,660 keystrokes",data/klm/results.json
+B-03,S25,quote,VI – International Medical Device Regulators Forum (IMDRF) Adverse Event Terminology (Codes and Terms can be obtained from: https://www.imdrf.org/working-groups/adverse-event-terminology),
+B-04,S24,quote,Possible death or serious injury if the adverse event were to recur,
+B-04,S25,quote,AE Category * Serious Public Health Threat Death Serious Deterioration in State of Health Others,
+B-05,S25,quote,VII – PATIENT INFORMATION,
+B-05,S25,quote,VII – HEALTHCARE FACILITY INFORMATION,
+B-05,S25,quote,Direct Marking Device Identifier (DM-DI),
+B-05,S25,quote,Direct Marketing Device Identifier (DM-DI),
+B-05,S25,quote,a rational needs to be provided here,
+B-06,S26,quote,Medical Devices AE Reporting for Healthcare Institutions and Medical Device Users,
+B-06,S26,quote,"Healthcare facility name [dropdown, required]",
+B-07,S26,quote,"I agree to HSA sharing my name and contact information with the local supplier, to facilitate investigation of the event. [checkbox, required] Yes / No",
+B-08,S23,quote,All product types except vaccines and medical devices,
+B-08,S23,link,For medical device companies,https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/
+P-01,S04,quote,Medical device grouping tool,
+P-01,S19,quote,New tool available: Try our AI-enabled risk classification tool (beta),
+P-02,S17,quote,Application for Product Registration and Dealer's Licence can be made simultaneously,
+P-03,S26,quote,"Are you submitting the device information as a photo? [yes_no, required]",
+P-04,S24,quote,The clock for reporting starts as soon as any personnel in your company,

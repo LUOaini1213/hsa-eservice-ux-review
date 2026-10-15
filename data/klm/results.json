@@ -1,0 +1,206 @@
+{
+  "generatedFrom": [
+    "data/klm/operators.json",
+    "data/klm/measured.json",
+    "evidence/sources.csv",
+    "data/klm/journey-a-asis.json",
+    "docs/rules.js",
+    "data/klm/journey-b-dealer-ae.json",
+    "data/klm/journey-b-user-ae.json"
+  ],
+  "responseSeconds": {
+    "hsaMedian": 0.597,
+    "prototype": 0.597,
+    "prototypeMeasured": false
+  },
+  "journeyA": {
+    "asis": {
+      "steps": 30,
+      "pageLoads": 19,
+      "distinctPages": 13,
+      "deadEnds": 2,
+      "decisions": 9,
+      "clicks": 27,
+      "keystrokes": 4,
+      "mentalOps": 34,
+      "counts": {
+        "K": 4,
+        "P": 27,
+        "B": 54,
+        "H": 4,
+        "M": 34,
+        "R": 19
+      },
+      "operatorSeconds": 83.7,
+      "responseSeconds": 13.3,
+      "klmSeconds": 97,
+      "wordsRead": 6841,
+      "readingSeconds": 1724.6
+    },
+    "prototypeP1": {
+      "steps": 11,
+      "pageLoads": 2,
+      "distinctPages": 2,
+      "deadEnds": 0,
+      "decisions": 8,
+      "clicks": 18,
+      "keystrokes": 0,
+      "mentalOps": 13,
+      "counts": {
+        "K": 0,
+        "P": 18,
+        "B": 36,
+        "H": 0,
+        "M": 13,
+        "R": 2
+      },
+      "operatorSeconds": 41,
+      "responseSeconds": 1.7,
+      "klmSeconds": 42.6,
+      "wordsRead": 1002,
+      "readingSeconds": 252.6
+    },
+    "prototypeP2": {
+      "steps": 12,
+      "pageLoads": 2,
+      "distinctPages": 2,
+      "deadEnds": 0,
+      "decisions": 9,
+      "clicks": 20,
+      "keystrokes": 0,
+      "mentalOps": 14,
+      "counts": {
+        "K": 0,
+        "P": 20,
+        "B": 40,
+        "H": 0,
+        "M": 14,
+        "R": 2
+      },
+      "operatorSeconds": 44.9,
+      "responseSeconds": 1.7,
+      "klmSeconds": 46.6,
+      "wordsRead": 927,
+      "readingSeconds": 233.7
+    },
+    "reductionPercent": {
+      "steps": 63.3,
+      "pageLoads": 89.5,
+      "clicks": 33.3,
+      "klmSeconds": 56.1,
+      "readingSeconds": 85.4,
+      "totalSeconds": 83.8
+    }
+  },
+  "journeyB": {
+    "dealerWordForm": {
+      "steps": 59,
+      "pageLoads": 3,
+      "distinctPages": 3,
+      "deadEnds": 0,
+      "decisions": 0,
+      "clicks": 90,
+      "keystrokes": 1660,
+      "mentalOps": 86,
+      "counts": {
+        "K": 1660,
+        "P": 88,
+        "B": 180,
+        "H": 146,
+        "M": 86,
+        "R": 3
+      },
+      "operatorSeconds": 754.1,
+      "responseSeconds": 2.2,
+      "klmSeconds": 756.3,
+      "wordsRead": 3185,
+      "readingSeconds": 802.9
+    },
+    "dealerDescription300": {
+      "steps": 59,
+      "pageLoads": 3,
+      "distinctPages": 3,
+      "deadEnds": 0,
+      "decisions": 0,
+      "clicks": 90,
+      "keystrokes": 1360,
+      "mentalOps": 86,
+      "counts": {
+        "K": 1360,
+        "P": 88,
+        "B": 180,
+        "H": 146,
+        "M": 86,
+        "R": 3
+      },
+      "operatorSeconds": 670.1,
+      "responseSeconds": 2.2,
+      "klmSeconds": 672.3,
+      "wordsRead": 3185,
+      "readingSeconds": 802.9
+    },
+    "dealerDescription1200": {
+      "steps": 59,
+      "pageLoads": 3,
+      "distinctPages": 3,
+      "deadEnds": 0,
+      "decisions": 0,
+      "clicks": 90,
+      "keystrokes": 2260,
+      "mentalOps": 86,
+      "counts": {
+        "K": 2260,
+        "P": 88,
+        "B": 180,
+        "H": 146,
+        "M": 86,
+        "R": 3
+      },
+      "operatorSeconds": 922.1,
+      "responseSeconds": 2.2,
+      "klmSeconds": 924.3,
+      "wordsRead": 3185,
+      "readingSeconds": 802.9
+    },
+    "userFormSG": {
+      "steps": 12,
+      "pageLoads": 2,
+      "distinctPages": 2,
+      "deadEnds": 0,
+      "decisions": 0,
+      "clicks": 14,
+      "keystrokes": 385,
+      "mentalOps": 11,
+      "counts": {
+        "K": 385,
+        "P": 13,
+        "B": 28,
+        "H": 10,
+        "M": 11,
+        "R": 2
+      },
+      "operatorSeconds": 143.8,
+      "responseSeconds": 1.5,
+      "klmSeconds": 145.3,
+      "wordsRead": 894,
+      "readingSeconds": 225.4
+    },
+    "statedMinutes": 15
+  },
+  "sensitivity": {
+    "cases": 27,
+    "klmReductionPercent": [
+      55.6,
+      56.7
+    ],
+    "totalReductionPercent": [
+      83.3,
+      84.1
+    ],
+    "dealerFormMinutes": [
+      10.2,
+      18.9
+    ]
+  },
+  "documentsP1": 14
+}
