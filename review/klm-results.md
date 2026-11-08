@@ -7,24 +7,27 @@ Reading time is outside KLM and is an upper bound: every word of each page visit
 
 ## Journey A: find licences, route, fees and documents (persona P1, Class B importer and wholesaler)
 
-| Measure | Current HSA journey | Prototype |
-|---|---:|---:|
-| Steps | 30 | 11 |
-| Page loads | 19 | 2 |
-| Distinct pages or files | 13 | 2 |
-| Dead ends (HSA links to google.com or a 404) | 2 | 0 |
-| Clicks | 27 | 18 |
-| Keystrokes | 4 | 0 |
-| Points where the user must interpret rules or do arithmetic | 9 | 0 |
-| Factual questions answered | 0 | 8 |
-| Mental operators (M) | 34 | 13 |
-| KLM time (operators + response) | 97 s (1:37) | 42.7 s (0:43) |
-| Words on pages visited | 6841 | 1002 |
-| Reading time, upper bound | 1724.6 s (28:45) | 252.6 s (4:13) |
-| KLM + reading | 30:22 | 4:55 |
+| Measure | Current HSA journey | Current, broken-link detours removed | Prototype |
+|---|---:|---:|---:|
+| Steps | 30 | 25 | 11 |
+| Page loads | 19 | 16 | 2 |
+| Distinct pages or files | 13 | 12 | 2 |
+| Dead ends (HSA links to google.com or a 404) | 2 | 0 | 0 |
+| Clicks | 27 | 23 | 18 |
+| Keystrokes | 4 | 0 | 0 |
+| Points where the user must interpret rules or do arithmetic | 9 | 9 | 0 |
+| Factual questions answered | 0 | 0 | 8 |
+| Mental operators (M) | 34 | 29 | 13 |
+| KLM time (operators + response) | 97 s (1:37) | 80.5 s (1:21) | 42.7 s (0:43) |
+| Words on pages visited | 6841 | 6674 | 1002 |
+| Reading time, upper bound | 1724.6 s (28:45) | 1682.5 s (28:03) | 252.6 s (4:13) |
+| KLM + reading | 30:22 | 29:23 | 4:55 |
+
+The middle column drops steps 4, 5, 6, 7, 8 of the current journey, which exist only because of the broken checker links (A-01, A-02): the user goes straight from the Registration overview to its route table. It separates what repairing the two links would save from what the redesign adds.
 
 Reduction: steps 63.3%, page loads 89.5%, clicks 33.3%, KLM time 56%, reading 85.4%, KLM + reading 83.8%.
 Across 27 combinations of K (0.2, 0.28, 0.5), M (1.2, 1.35, 1.5) and reading speed (200, 238, 300 wpm), the KLM reduction ranges 55.6% to 56.7% and KLM + reading 83.3% to 84.1%.
+Against the detours-removed baseline: steps 56%, page loads 87.5%, KLM time 47% (sensitivity 46.6% to 47.5%), reading 85%.
 
 Persona P2 (Class C importer, EU and TGA approvals via the MRA): prototype 12 steps, KLM 46.6 s.
 Documents P1 must prepare for the recommended route: 14 (same list in both journeys; the prototype assembles it on one page).
@@ -48,18 +51,18 @@ The dealer form states it "may take you 15 minutes to fill in". KLM execution ti
 
 Starting from HSA's Medical devices page, with the device already classified as Class B, find (1) which dealer's licences are needed, (2) which registration route applies and its fee and turnaround, (3) the documents to prepare, and (4) how to get access to SHARE.
 
-Assumptions: Best case: the user follows HSA's own links and calls to action in the order a first-time reader would, and never gets lost beyond the two dead ends HSA's links lead to. The user tries each link that promises a requirements checker once, then falls back to reading the pages. Scrolling and re-reading are not modelled, so operator time is a lower bound. Opening a collapsed section is one P B B. Risk classification is excluded from both current and redesigned journeys because both send the user to the same HSA tool. Dead-end tabs are closed with Ctrl+W (H, K, K, H).
+Assumptions: Best case: the user follows HSA's own links and calls to action in the order a first-time reader would, and never gets lost beyond the two dead ends HSA's links lead to. The user tries each link that promises a requirements checker once, then falls back to reading the pages. Scrolling and re-reading are not modelled, so operator time is a lower bound. Opening a collapsed section is one P B B. Risk classification is excluded from both current and redesigned journeys because both send the user to the same HSA tool. Dead-end tabs are closed with Ctrl+W (H, K, K, H). Steps marked 'detour' (4 to 8) exist only because of the broken checker links (A-01, A-02). scripts/klm.mjs also scores the journey without them, as a 'links fixed' baseline in which the user goes straight from the Registration overview to its route table.
 
 | # | Where | Action | Operators | Decision or dead end |
 |---|---|---|---|---|
 | 1 | S01 | Open HSA Medical devices page (from a search result) | `R:S01` |  |
 | 2 | S01 | Choose 'Regulatory overview' | `M P B B R:S02` |  |
 | 3 | S02 | Follow 'evaluation routes' to the Registration overview | `M P B B R:S03` |  |
-| 4 | S03 | Click 'Check device's route' (opens google.com in a new tab) | `M P B B R:dead` | Dead end: Link goes to https://www.google.com |
-| 5 | S03 | Realise it is the wrong site; close the tab | `M H K K H` |  |
-| 6 | S03 | Follow 'Registration and licensing tools' under Useful links | `M P B B R:S04` |  |
-| 7 | S04 | Click 'Registration and licensing requirements' (opens a 404 page in a new tab) | `M P B B R:dead` | Dead end: Link returns HTTP 404 |
-| 8 | S04 | Close the 404 tab and go back to the Registration overview | `M H K K H P B B` |  |
+| 4 | S03 | Click 'Check device's route' (opens google.com in a new tab) | `M P B B R:dead` | Dead end: Link goes to https://www.google.com; detour (dropped in the links-fixed baseline) |
+| 5 | S03 | Realise it is the wrong site; close the tab | `M H K K H` | detour (dropped in the links-fixed baseline) |
+| 6 | S03 | Follow 'Registration and licensing tools' under Useful links | `M P B B R:S04` | detour (dropped in the links-fixed baseline) |
+| 7 | S04 | Click 'Registration and licensing requirements' (opens a 404 page in a new tab) | `M P B B R:dead` | Dead end: Link returns HTTP 404; detour (dropped in the links-fixed baseline) |
+| 8 | S04 | Close the 404 tab and go back to the Registration overview | `M H K K H P B B` | detour (dropped in the links-fixed baseline) |
 | 9 | S03 | Open the 'Registration requirements' section and work out the route from the evaluation-route table | `P B B M M` | Decision: Which evaluation route applies (Full / Abridged / Expedited / Immediate)? |
 | 10 | S03 | Follow 'See registration guides' | `M P B B R:S05` |  |
 | 11 | S05 | Choose 'Register Class B medical device via immediate route' | `M P B B R:S06` |  |

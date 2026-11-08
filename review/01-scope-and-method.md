@@ -26,18 +26,18 @@ These are planning personas, not research participants. Nothing about them was c
 
 ## Methods
 
-1. **Evidence capture.** `scripts/fetch_sources.py` fetched 37 public sources (29 HSA pages, forms and guides, 8 GovTech standards pages), recorded HTTP status, SHA-256, word count and median response time over three requests (`evidence/sources.csv`), and audited 560 links on 24 HSA web pages (`evidence/link-audit.csv`). Page copies stay local (`evidence/snapshots/`, git-ignored) so HSA content is not redistributed; short quotes are kept as evidence.
+1. **Evidence capture.** `scripts/fetch_sources.py` fetched 37 public sources (29 HSA pages, forms and guides, 8 GovTech standards pages), recorded HTTP status, SHA-256, word count and median response time over three requests (`evidence/sources.csv`), and audited 560 links on 24 HSA web pages (`evidence/link-audit.csv`: 552 checked over HTTP, 8 mailto links not checked). Page copies stay local (`evidence/snapshots/`, git-ignored) so HSA content is not redistributed; short quotes are kept as evidence.
 2. **Self-help tool inspection.** `scripts/selfhelp_tree.py` read the decision trees embedded in the three public self-help tools and counted questions, results, path lengths and link targets (`evidence/selfhelp-trees.json`).
 3. **Heuristic evaluation.** Each page in the journeys was reviewed against Nielsen's ten usability heuristics and the GovTech Digital Service Standards (DSS) control catalogue, with the Singapore Government Design System (SGDS) as the reference for patterns. Severity uses Nielsen's 0 to 4 scale, judged on frequency, impact and persistence. Every issue cites at least one evidence row.
-4. **Evidence verification.** `scripts/verify_evidence.py` checks every quote against the page text and every link against the link audit (`evidence/verification.txt`; every row passed). It was itself checked by altering two quotes and confirming both were reported as failures.
+4. **Evidence verification.** `scripts/verify_evidence.py` checks every quote against the page text and every link against the link audit (`evidence/verification.txt`; every row passed). It was itself checked by altering two quotes and confirming both were reported as failures. Because the page copies are not redistributed, `scripts/check_archives.py` repeats the quote and link check against public Internet Archive copies taken before the review date where they exist (`evidence/archive-verification.json`); anyone can re-run it.
 5. **Screenshots.** Annotated screenshots of the key issues are in `evidence/screenshots/`. Annotations are marked as reviewer annotations.
 6. **Task analysis.** Step counts, decision points, documents and a Keystroke-Level Model (KLM) estimate for each journey (`review/03-task-analysis.md`, numbers in `review/klm-results.md`).
 7. **Redesign prototype** for the worst-rated flow, measured with the same KLM method (`review/04-redesign.md`).
-8. **Usability test plan** for the candidate to run with five classmates (`testing/`). No participant data exists yet, and none is reported.
+8. **Usability test plan** for the reviewer to run with five participants, students with no HSA experience (`testing/`). No participant data exists yet, and none is reported.
 
 ## Limitations
 
-- **One evaluator.** Nielsen's own data suggests a single evaluator finds about a third of the problems that three to five evaluators find. The test plan includes an independent severity re-rating by classmates.
+- **One evaluator.** Nielsen's own data suggests a single evaluator finds about a third of the problems that three to five evaluators find. The test plan includes an independent severity re-rating by the participants.
 - **Expert review, not user evidence.** Severity ratings are judgements. They become evidence only when the usability test is run.
 - **A snapshot.** Pages change after the review date, so some findings may already be fixed. The reviewed pages show page-level update dates from 13 March to 13 July 2026, and every evidence row records when its source was fetched.
 - **KLM models skilled, error-free execution.** It leaves out searching, reading, thinking about the rules and gathering information, so the times are lower bounds. Reading time is reported separately as an upper bound.

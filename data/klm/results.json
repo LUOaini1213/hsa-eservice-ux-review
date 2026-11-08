@@ -37,6 +37,36 @@
       "wordsRead": 6841,
       "readingSeconds": 1724.6
     },
+    "asisLinksFixed": {
+      "steps": 25,
+      "pageLoads": 16,
+      "distinctPages": 12,
+      "deadEnds": 0,
+      "decisions": 9,
+      "clicks": 23,
+      "keystrokes": 0,
+      "mentalOps": 29,
+      "counts": {
+        "K": 0,
+        "P": 23,
+        "B": 46,
+        "H": 0,
+        "M": 29,
+        "R": 16
+      },
+      "operatorSeconds": 69.1,
+      "responseSeconds": 11.5,
+      "klmSeconds": 80.5,
+      "wordsRead": 6674,
+      "readingSeconds": 1682.5
+    },
+    "detourSteps": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "prototypeP1": {
       "steps": 11,
       "pageLoads": 2,
@@ -90,6 +120,12 @@
       "klmSeconds": 56,
       "readingSeconds": 85.4,
       "totalSeconds": 83.8
+    },
+    "reductionPercentFromLinksFixed": {
+      "steps": 56,
+      "pageLoads": 87.5,
+      "klmSeconds": 47,
+      "readingSeconds": 85
     }
   },
   "journeyB": {
@@ -192,6 +228,10 @@
     "klmReductionPercent": [
       55.6,
       56.7
+    ],
+    "klmReductionFromLinksFixedPercent": [
+      46.6,
+      47.5
     ],
     "totalReductionPercent": [
       83.3,

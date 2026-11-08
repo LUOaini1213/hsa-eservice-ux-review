@@ -1,18 +1,26 @@
 // Local-only: capture evidence screenshots with headless Chrome over the DevTools protocol.
 // Outlines are drawn around the element in question and a caption marked
 // "Reviewer annotation" is added; page content is otherwise unchanged.
-//   CHROME="C:/Program Files/Google/Chrome/Application/chrome.exe" node scripts/screenshots.mjs
+//   node scripts/screenshots.mjs
+// Chrome is taken from the CHROME environment variable, else from the usual install location
+// for this platform (Windows, macOS) or the first of google-chrome, google-chrome-stable,
+// chromium, chromium-browser on PATH (Linux). The DevTools port is CDP_PORT (default 9333).
 import { spawn } from "node:child_process";
 import { mkdtempSync, rmSync, writeFileSync, readFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, dirname, resolve, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 import http from "node:http";
+import { findChrome } from "./find-chrome.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "evidence", "screenshots");
-const chromePath = process.env.CHROME || "C:/Program Files/Google/Chrome/Application/chrome.exe";
-const port = 9333;
+const chromePath = findChrome();
+if (!chromePath) {
+  console.error("Chrome or Chromium not found. Set CHROME to its executable, e.g. CHROME=/usr/bin/chromium node scripts/screenshots.mjs");
+  process.exit(2);
+}
+const port = Number(process.env.CDP_PORT || 9333);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Static server for the prototype (ES modules do not load from file://).

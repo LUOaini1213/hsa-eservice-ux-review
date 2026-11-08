@@ -4,10 +4,10 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { load, HEURISTICS, DSS, render } from "../scripts/render_issues.mjs";
+import { load, HEURISTICS, DSS, render, parseCsv } from "../scripts/render_issues.mjs";
 
 const root = new URL("..", import.meta.url);
-const { issues, evidence, sources } = load();
+const { issues, evidence, sources, archive } = load();
 const results = JSON.parse(readFileSync(new URL("data/klm/results.json", root), "utf8"));
 const trees = JSON.parse(readFileSync(new URL("evidence/selfhelp-trees.json", root), "utf8"));
 const fmt = (n) => n.toLocaleString("en-SG");
@@ -39,7 +39,9 @@ test("every issue has evidence, every evidence row cites a known source", () => 
   }
 });
 
-test("local quote verification passed for every row and is current", () => {
+// This checks the recorded result of scripts/verify_evidence.py (run locally against page copies
+// that are not redistributed); it does not re-verify the quotes. check_archives.py is the public re-check.
+test("recorded local quote verification covers every evidence row and reports no failure", () => {
   const v = readFileSync(new URL("evidence/verification.txt", root), "utf8");
   const n = evidence.length;
   assert.match(v.split("\n")[0], new RegExp(`^${n}/${n} evidence rows verified`));
@@ -73,7 +75,7 @@ test("numbers quoted in the issue log match the computed results", () => {
 });
 
 test("generated documents are up to date", () => {
-  assert.equal(readFileSync(new URL("review/02-issue-log.md", root), "utf8"), render({ issues, evidence, sources }));
+  assert.equal(readFileSync(new URL("review/02-issue-log.md", root), "utf8"), render({ issues, evidence, sources, archive }));
   const r = spawnSync(process.execPath, [fileURLToPath(new URL("scripts/klm.mjs", root)), "--check"], { encoding: "utf8" });
   assert.equal(r.status, 0, r.stderr);
 });
@@ -116,4 +118,84 @@ test("README headline numbers match the computed results and the issue log", () 
   const sev = (n) => issues.filter((i) => Number(i.severity) === n).length;
   assert.ok(md.includes(`${issues.length - sev(0)} issues in all (${sev(3)} major, ${sev(2)} minor, ${sev(1)} cosmetic) plus ${sev(0)} strengths`));
   assert.equal(sev(4), 0, "README wording assumes no severity-4 issues");
+});
+
+const readme = () => readFileSync(new URL("README.md", root), "utf8");
+const doc = (p) => readFileSync(new URL(p, root), "utf8");
+
+test("link-audit counts in the README, issue log and method doc match evidence/link-audit.csv", () => {
+  const rows = parseCsv(doc("evidence/link-audit.csv"));
+  const n = (st) => rows.filter((r) => r.status === st).length;
+  const pages = new Set(rows.map((r) => r.source_id)).size;
+  const checked = rows.length - n("skipped");
+  assert.equal(n("skipped"), rows.filter((r) => r.href.startsWith("mailto:")).length, "only mailto links are skipped");
+  const failures = rows.filter((r) => r.status !== "200" && r.status !== "skipped");
+  const sentence = `${rows.length} links on ${pages} HSA web pages (${checked} checked over HTTP, ${n("skipped")} mailto links not checked) found ${failures.length} failures`;
+  assert.ok(readme().includes(sentence), "README: " + sentence);
+  assert.ok(issues.find((i) => i.id === "A-02").finding.includes(sentence), "A-02: " + sentence);
+  assert.ok(doc("review/01-scope-and-method.md").includes(`audited ${rows.length} links on ${pages} HSA web pages (\`evidence/link-audit.csv\`: ${checked} checked over HTTP, ${n("skipped")} mailto links not checked)`), "01-scope-and-method");
+  // "all pointing to this checker": every failure targets one of the two checker URLs.
+  for (const f of failures) assert.match(f.href, /\/registration\/requirements$|\/hsa\/mdc\/medical-devices$/, f.href);
+});
+
+test("archived copies point at the right source, predate the review and match the record", () => {
+  const rows = parseCsv(doc("evidence/archives.csv"));
+  assert.ok(rows.length > 0);
+  for (const a of rows) {
+    const m = a.archive_url.match(/^https:\/\/web\.archive\.org\/web\/(\d{14})\/(.+)$/);
+    assert.ok(m, a.archive_url);
+    assert.equal(m[2], sources[a.source_id].url, `${a.source_id} archive points elsewhere`);
+    assert.ok(m[1] <= "20261015235959", `${a.source_id} copy is after the review date`);
+    const t = m[1];
+    assert.equal(a.archived_utc, `${t.slice(0, 4)}-${t.slice(4, 6)}-${t.slice(6, 8)}T${t.slice(8, 10)}:${t.slice(10, 12)}:${t.slice(12, 14)}Z`);
+  }
+  // Every web evidence row of an archived source is in the record, with that source's archive URL.
+  const url = Object.fromEntries(rows.map((a) => [a.source_id, a.archive_url]));
+  const expected = evidence.map((e, k) => ({ ...e, line: k + 2 })).filter((e) => e.source_id in url && ["quote", "link", "html"].includes(e.type));
+  assert.deepEqual(archive.map((r) => r.line), expected.map((e) => e.line));
+  for (const r of archive) {
+    const e = evidence[r.line - 2];
+    assert.equal(r.issue_id, e.issue_id);
+    assert.equal(r.source_id, e.source_id);
+    assert.equal(r.type, e.type);
+    assert.equal(r.archive_url, url[r.source_id]);
+    assert.equal(typeof r.found, "boolean");
+  }
+  const found = archive.filter((r) => r.found).length;
+  const md = readme();
+  const kind = Object.fromEntries(JSON.parse(doc("evidence/sources.json")).map((x) => [x.id, x.kind]));
+  const pages = new Set(evidence.filter((e) => ["quote", "link", "html"].includes(e.type) && kind[e.source_id] === "html").map((e) => e.source_id));
+  const selfhelpMissing = [...pages].filter((x) => !(x in url) && sources[x].url.includes("selfhelp.hsa.gov.sg"));
+  assert.equal(rows.length + selfhelpMissing.length, pages.size, "every web page without a copy is a self-help tool");
+  assert.ok(md.includes(`${rows.length} of the ${pages.size} web pages cited as evidence have such a copy, and ${found} of their ${archive.length} quote and link rows are found in it`), "README archive count");
+  assert.ok(md.includes(`The ${selfhelpMissing.length} self-help tools have no copy`), "README self-help count");
+  assert.ok(doc("review/02-issue-log.md").includes(`${found} of the ${archive.length} quote and link rows`), "issue log archive count");
+});
+
+test("README first screen and links-fixed baseline match the computed results", () => {
+  const md = readme();
+  const a0 = results.journeyA.asis, f = results.journeyA.asisLinksFixed, a1 = results.journeyA.prototypeP1;
+  const red = results.journeyA.reductionPercent, rf = results.journeyA.reductionPercentFromLinksFixed;
+  const sev = (n) => issues.filter((i) => Number(i.severity) === n).length;
+  assert.ok(md.includes(`Main results: ${issues.length - sev(0)} issues (${sev(3)} major)`), "first-screen issue count");
+  assert.ok(md.includes(`from ${a0.klmSeconds} s to ${a1.klmSeconds} s (-${red.klmSeconds}%, or -${Math.round(rf.klmSeconds)}% against a baseline with the broken links fixed)`), "first-screen KLM");
+  assert.equal(results.journeyA.detourSteps.length, a0.steps - f.steps);
+  assert.equal(f.deadEnds, 0, "the links-fixed baseline has no dead ends");
+  assert.ok(md.includes(`with the ${results.journeyA.detourSteps.length} detour steps they cause removed (a "links fixed" baseline of ${f.steps} steps and ${f.klmSeconds} s), the prototype still needs ${Math.round(rf.steps)}% fewer steps and ${Math.round(rf.klmSeconds)}% less KLM time`), "links-fixed sentence");
+});
+
+test("mutant count in the README matches the mutation harness", () => {
+  const r = spawnSync(process.execPath, [fileURLToPath(new URL("tests/mutate.mjs", root)), "--list"], { encoding: "utf8" });
+  assert.equal(r.status, 0, r.stderr);
+  const n = Number(r.stdout.trim().split("\n").at(-1).match(/^(\d+) mutants$/)[1]);
+  assert.ok(readme().includes(`It currently makes ${n} mutants and the tests kill all ${n}`), `README should say ${n} mutants`);
+});
+
+test("README test command works without shell glob expansion and matches package.json", () => {
+  const pkg = JSON.parse(doc("package.json"));
+  assert.equal(pkg.scripts.test, 'node --test "tests/*.test.mjs"');
+  assert.ok(readme().includes('node --test "tests/*.test.mjs"'));
+  const major = Number(pkg.engines.node.match(/>=(\d+)/)[1]);
+  assert.ok(major >= 22, "quoted test globs need Node 22 or later");
+  assert.ok(readme().includes(`Node ${major} or later`));
 });

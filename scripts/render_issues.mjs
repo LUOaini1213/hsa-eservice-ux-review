@@ -74,13 +74,23 @@ export function load() {
   const issues = parseCsv(read("data/issues.csv"));
   const evidence = parseCsv(read("data/evidence.csv"));
   const sources = Object.fromEntries(parseCsv(read("evidence/sources.csv")).map((s) => [s.id, s]));
-  return { issues, evidence, sources };
+  const archive = JSON.parse(read("evidence/archive-verification.json")).rows;
+  return { issues, evidence, sources, archive };
 }
 
 const split = (s) => (s ? s.split(";").filter(Boolean) : []);
 const esc = (s) => String(s).replace(/\|/g, "\\|");
 
-export function render({ issues, evidence, sources }) {
+// " (archived copy, 2026-07-13)" for an evidence row found in a Wayback copy (scripts/check_archives.py).
+// data/evidence.csv row k (0-based) is file line k + 2, as in the archive record.
+function archived(archive, k) {
+  const a = (archive || []).find((x) => x.line === k + 2 && x.found);
+  if (!a) return "";
+  const ts = a.archive_url.match(/\/web\/(\d{4})(\d\d)(\d\d)/);
+  return ` ([archived copy, ${ts[1]}-${ts[2]}-${ts[3]}](${a.archive_url}))`;
+}
+
+export function render({ issues, evidence, sources, archive = [] }) {
   const problems = issues.filter((i) => Number(i.severity) > 0);
   const bySev = [4, 3, 2, 1].map((s) => `${problems.filter((i) => Number(i.severity) === s).length} at severity ${s}`);
   const lines = [];
@@ -88,6 +98,11 @@ export function render({ issues, evidence, sources }) {
   lines.push("# Issue log");
   lines.push("");
   lines.push(`${problems.length} issues (${bySev.join(", ")}) and ${issues.length - problems.length} strengths. Severity uses Nielsen's 0 to 4 scale, judged on frequency, impact and persistence. Evidence rows were checked against page snapshots (see evidence/verification.txt).`);
+  const web = archive.length, hit = archive.filter((a) => a.found).length;
+  if (web) {
+    lines.push("");
+    lines.push(`Those page snapshots are not redistributed. As a public cross-check, ${hit} of the ${web} quote and link rows from sources that have an Internet Archive copy taken before the review were also found in that copy (marked "archived copy" below; see evidence/archive-verification.json). An archived copy shows the text or link was on the page on that date; it does not show where a link led.`);
+  }
   lines.push("");
   lines.push("| ID | Sev | Issue | Heuristics | DSS controls | Sources |");
   lines.push("|---|:-:|---|---|---|---|");
@@ -112,11 +127,13 @@ export function render({ issues, evidence, sources }) {
     lines.push("");
     lines.push("Evidence:");
     lines.push("");
-    for (const e of evidence.filter((x) => x.issue_id === i.id)) {
+    for (const [k, e] of evidence.entries()) {
+      if (e.issue_id !== i.id) continue;
       const s = sources[e.source_id];
       const where = s ? `[${e.source_id}](${s.url}) ${s.title}` : "computed";
-      if (e.type === "quote" || e.type === "html") lines.push(`- ${where}: "${e.evidence}"`);
-      else if (e.type === "link") lines.push(`- ${where}: link "${e.evidence}"${e.target ? ` points to \`${e.target}\`` : ""}`);
+      const arc = archived(archive, k);
+      if (e.type === "quote" || e.type === "html") lines.push(`- ${where}: "${e.evidence}"${arc}`);
+      else if (e.type === "link") lines.push(`- ${where}: link "${e.evidence}"${e.target ? ` points to \`${e.target}\`` : ""}${arc}`);
       else lines.push(`- ${where}: ${e.evidence} (\`${e.target}\`)`);
     }
     lines.push("");

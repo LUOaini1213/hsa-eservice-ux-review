@@ -4,18 +4,38 @@ on:
   pull_request:
 jobs:
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Unit and integrity tests
-        run: node --test tests/*.test.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit and integrity tests (same command as the README and npm test)
+        run: npm test
       - name: Generated files are up to date
         run: |
           node scripts/klm.mjs --check
           node scripts/render_issues.mjs --check
+      - name: Capture scripts compile (they need network, so they are not run here)
+        run: python -m py_compile scripts/*.py
+      - name: No local machine paths in tracked text files
+        run: |
+          if git ls-files -z | xargs -0 grep -InE '[A-Za-z]:[\\/]+Users[\\/]|/home/[a-z][a-z0-9_-]*/|/Users/[A-Za-z]'; then
+            echo "Local paths found in tracked files"; exit 1
+          fi
+      - name: Requirements files are ASCII
+        run: |
+          if LC_ALL=C grep -n '[^ -~]' requirements-capture.txt; then echo "Non-ASCII characters in requirements-capture.txt"; exit 1; fi
       - name: Mutation check (every mutant of docs/rules.js must be killed)
         run: node tests/mutate.mjs
       - name: Negative control (the mutation check must fail on a weak suite)

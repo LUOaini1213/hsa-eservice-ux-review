@@ -1,0 +1,390 @@
+{
+ "_note": "Written by scripts/check_archives.py. found=true: the quote, or the link with that text and target, is in the archived copy.",
+ "checked_utc": "2026-11-08T12:23:59Z",
+ "rows": [
+  {
+   "line": 2,
+   "issue_id": "A-01",
+   "source_id": "S03",
+   "type": "link",
+   "archive_url": "https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/",
+   "found": true
+  },
+  {
+   "line": 3,
+   "issue_id": "A-01",
+   "source_id": "S03",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/",
+   "found": true
+  },
+  {
+   "line": 4,
+   "issue_id": "A-02",
+   "source_id": "S04",
+   "type": "link",
+   "archive_url": "https://web.archive.org/web/20260612145127/https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/",
+   "found": true
+  },
+  {
+   "line": 5,
+   "issue_id": "A-02",
+   "source_id": "S04",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260612145127/https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/",
+   "found": true
+  },
+  {
+   "line": 10,
+   "issue_id": "A-03",
+   "source_id": "S03",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/",
+   "found": true
+  },
+  {
+   "line": 11,
+   "issue_id": "A-03",
+   "source_id": "S03",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/",
+   "found": true
+  },
+  {
+   "line": 12,
+   "issue_id": "A-03",
+   "source_id": "S06",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260608115228/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/",
+   "found": true
+  },
+  {
+   "line": 13,
+   "issue_id": "A-03",
+   "source_id": "S06",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260608115228/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/",
+   "found": true
+  },
+  {
+   "line": 14,
+   "issue_id": "A-03",
+   "source_id": "S08",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260610212048/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-expedited-registration/",
+   "found": true
+  },
+  {
+   "line": 15,
+   "issue_id": "A-03",
+   "source_id": "S10",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260614171344/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-d-expedited-registration/",
+   "found": true
+  },
+  {
+   "line": 16,
+   "issue_id": "A-04",
+   "source_id": "S06",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260608115228/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/",
+   "found": true
+  },
+  {
+   "line": 17,
+   "issue_id": "A-04",
+   "source_id": "S28",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260617064939/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-immediate-registration/",
+   "found": true
+  },
+  {
+   "line": 18,
+   "issue_id": "A-05",
+   "source_id": "S06",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260608115228/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/",
+   "found": true
+  },
+  {
+   "line": 19,
+   "issue_id": "A-05",
+   "source_id": "S03",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/",
+   "found": true
+  },
+  {
+   "line": 20,
+   "issue_id": "A-06",
+   "source_id": "S14",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260614164750/https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/",
+   "found": true
+  },
+  {
+   "line": 21,
+   "issue_id": "A-06",
+   "source_id": "S14",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260614164750/https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/",
+   "found": true
+  },
+  {
+   "line": 22,
+   "issue_id": "A-06",
+   "source_id": "S14",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260614164750/https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/",
+   "found": true
+  },
+  {
+   "line": 24,
+   "issue_id": "A-07",
+   "source_id": "S11",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260612144728/https://www.hsa.gov.sg/medical-devices/fees/",
+   "found": true
+  },
+  {
+   "line": 27,
+   "issue_id": "A-08",
+   "source_id": "S11",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260612144728/https://www.hsa.gov.sg/medical-devices/fees/",
+   "found": true
+  },
+  {
+   "line": 28,
+   "issue_id": "A-09",
+   "source_id": "S07",
+   "type": "link",
+   "archive_url": "https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/",
+   "found": true
+  },
+  {
+   "line": 29,
+   "issue_id": "A-09",
+   "source_id": "S07",
+   "type": "link",
+   "archive_url": "https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/",
+   "found": true
+  },
+  {
+   "line": 30,
+   "issue_id": "A-09",
+   "source_id": "S07",
+   "type": "link",
+   "archive_url": "https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/",
+   "found": true
+  },
+  {
+   "line": 31,
+   "issue_id": "A-09",
+   "source_id": "S07",
+   "type": "link",
+   "archive_url": "https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/",
+   "found": true
+  },
+  {
+   "line": 32,
+   "issue_id": "A-09",
+   "source_id": "S14",
+   "type": "link",
+   "archive_url": "https://web.archive.org/web/20260614164750/https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/",
+   "found": true
+  },
+  {
+   "line": 33,
+   "issue_id": "A-09",
+   "source_id": "S14",
+   "type": "link",
+   "archive_url": "https://web.archive.org/web/20260614164750/https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/",
+   "found": true
+  },
+  {
+   "line": 34,
+   "issue_id": "A-09",
+   "source_id": "S16",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260914160037/https://www.hsa.gov.sg/e-services/share-medical-device/",
+   "found": true
+  },
+  {
+   "line": 35,
+   "issue_id": "A-10",
+   "source_id": "S03",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/",
+   "found": true
+  },
+  {
+   "line": 36,
+   "issue_id": "A-10",
+   "source_id": "S07",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/",
+   "found": true
+  },
+  {
+   "line": 38,
+   "issue_id": "A-10",
+   "source_id": "S16",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260914160037/https://www.hsa.gov.sg/e-services/share-medical-device/",
+   "found": true
+  },
+  {
+   "line": 42,
+   "issue_id": "A-12",
+   "source_id": "S11",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260612144728/https://www.hsa.gov.sg/medical-devices/fees/",
+   "found": false
+  },
+  {
+   "line": 43,
+   "issue_id": "A-18",
+   "source_id": "S11",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260612144728/https://www.hsa.gov.sg/medical-devices/fees/",
+   "found": false
+  },
+  {
+   "line": 44,
+   "issue_id": "A-18",
+   "source_id": "S11",
+   "type": "html",
+   "archive_url": "https://web.archive.org/web/20260612144728/https://www.hsa.gov.sg/medical-devices/fees/",
+   "found": false
+  },
+  {
+   "line": 45,
+   "issue_id": "A-18",
+   "source_id": "S04",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260612145127/https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/",
+   "found": false
+  },
+  {
+   "line": 46,
+   "issue_id": "A-18",
+   "source_id": "S04",
+   "type": "html",
+   "archive_url": "https://web.archive.org/web/20260612145127/https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/",
+   "found": false
+  },
+  {
+   "line": 49,
+   "issue_id": "A-14",
+   "source_id": "S22",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260616122939/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/grouping/ivd-cluster/",
+   "found": true
+  },
+  {
+   "line": 50,
+   "issue_id": "A-14",
+   "source_id": "S22",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260616122939/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/grouping/ivd-cluster/",
+   "found": true
+  },
+  {
+   "line": 52,
+   "issue_id": "A-15",
+   "source_id": "S09",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260616125517/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-abridged-registration/",
+   "found": true
+  },
+  {
+   "line": 53,
+   "issue_id": "A-15",
+   "source_id": "S10",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260614171344/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-d-expedited-registration/",
+   "found": true
+  },
+  {
+   "line": 54,
+   "issue_id": "A-15",
+   "source_id": "S07",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/",
+   "found": true
+  },
+  {
+   "line": 56,
+   "issue_id": "A-17",
+   "source_id": "S02",
+   "type": "link",
+   "archive_url": "https://web.archive.org/web/20260614103859/https://www.hsa.gov.sg/medical-devices/regulatory-overview/",
+   "found": true
+  },
+  {
+   "line": 57,
+   "issue_id": "A-17",
+   "source_id": "S23",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20261012085715/https://www.hsa.gov.sg/adverse-events/",
+   "found": true
+  },
+  {
+   "line": 58,
+   "issue_id": "B-01",
+   "source_id": "S24",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260614104927/https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/",
+   "found": true
+  },
+  {
+   "line": 61,
+   "issue_id": "B-01",
+   "source_id": "S23",
+   "type": "link",
+   "archive_url": "https://web.archive.org/web/20261012085715/https://www.hsa.gov.sg/adverse-events/",
+   "found": true
+  },
+  {
+   "line": 65,
+   "issue_id": "B-04",
+   "source_id": "S24",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260614104927/https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/",
+   "found": true
+  },
+  {
+   "line": 75,
+   "issue_id": "B-08",
+   "source_id": "S23",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20261012085715/https://www.hsa.gov.sg/adverse-events/",
+   "found": true
+  },
+  {
+   "line": 76,
+   "issue_id": "B-08",
+   "source_id": "S23",
+   "type": "link",
+   "archive_url": "https://web.archive.org/web/20261012085715/https://www.hsa.gov.sg/adverse-events/",
+   "found": true
+  },
+  {
+   "line": 77,
+   "issue_id": "P-01",
+   "source_id": "S04",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260612145127/https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/",
+   "found": true
+  },
+  {
+   "line": 81,
+   "issue_id": "P-04",
+   "source_id": "S24",
+   "type": "quote",
+   "archive_url": "https://web.archive.org/web/20260614104927/https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/",
+   "found": true
+  }
+ ]
+}

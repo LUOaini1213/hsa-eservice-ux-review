@@ -22,7 +22,7 @@ With five participants these are checked descriptively, not with significance te
 
 ## Participants
 
-Five classmates, recruited by the candidate. They are proxies for first-time applicants: they know nothing about HSA licensing, which is the situation of a new small distributor's staff. They are not regulatory professionals; findings about expert workflows are out of scope.
+Five participants (students with no HSA experience), recruited by the reviewer. They are proxies for first-time applicants: they know nothing about HSA licensing, which is the situation of a new small distributor's staff. They are not regulatory professionals; findings about expert workflows are out of scope.
 
 Screener (exclude if yes to any): has worked in medical device regulatory affairs; has used SHARE; has read HSA's medical device pages in the past year.
 
@@ -99,14 +99,14 @@ Moderator rules: do not help with the task; answer "What would you do if I weren
 
 ## Pilot
 
-Run one pilot session with a sixth classmate first. Fix the script, timings and scenario cards; do not include the pilot in the results.
+Run one pilot session with a sixth participant from the same pool first. Fix the script, timings and scenario cards; do not include the pilot in the results.
 
 ## Data handling
 
 - Participants are identified only as P1 to P5. The key linking codes to names is kept offline and deleted after analysis.
-- Screen recordings are kept on the candidate's own device, are not uploaded, and are deleted within 30 days of analysis.
+- Screen recordings are kept on the reviewer's own device, are not uploaded, and are deleted within 30 days of analysis.
 - Only anonymised results are committed to this repository.
-- This is an informal usability evaluation with classmates. If the results will be published beyond a portfolio, check whether NUS ethics review is needed first.
+- This is an informal usability evaluation with student volunteers. If the results will be published beyond this repository, check whether NUS ethics review is needed first.
 
 ## Materials
 
