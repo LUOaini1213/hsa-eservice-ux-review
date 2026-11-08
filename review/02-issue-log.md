@@ -3,6 +3,8 @@
 
 26 issues (0 at severity 4, 5 at severity 3, 11 at severity 2, 10 at severity 1) and 4 strengths. Severity uses Nielsen's 0 to 4 scale, judged on frequency, impact and persistence. Evidence rows were checked against page snapshots (see evidence/verification.txt).
 
+Those page snapshots are not redistributed. As a public cross-check, 43 of the 48 quote and link rows from sources that have an Internet Archive copy taken before the review were also found in that copy (marked "archived copy" below; see evidence/archive-verification.json). An archived copy shows the text or link was on the page on that date; it does not show where a link led.
+
 | ID | Sev | Issue | Heuristics | DSS controls | Sources |
 |---|:-:|---|---|---|---|
 | [A-01](#a-01) | 3 | "Check device's route" button opens google.com | H1, H4 | PR-5, WO-10 | S03 |
@@ -50,8 +52,8 @@ The only call to action on the Registration overview page that promises to tell 
 
 Evidence:
 
-- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): link "Check device's route" points to `https://www.google.com`
-- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): "Answer a few questions to find out the requirements for your device's registration route and whether you need to apply for a license."
+- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): link "Check device's route" points to `https://www.google.com` ([archived copy, 2026-07-13](https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/))
+- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): "Answer a few questions to find out the requirements for your device's registration route and whether you need to apply for a license." ([archived copy, 2026-07-13](https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/))
 
 Recommendation: Point the button at the working requirements checker, or remove it until one exists. Add the page to an automated link check (DSS PR-5).
 
@@ -59,12 +61,12 @@ Recommendation: Point the button at the working requirements checker, or remove 
 
 **Every link to the "registration and licensing requirements" checker returns 404** (severity 3; frequency high, impact high, persistence high)
 
-The tools page, and result screens in all three self-help tools (51 of 52 risk-class results, 12 of 18 grouping results, 1 of 3 'is it a medical device' results), link to the requirements checker. Both targets return HTTP 404. A link audit of 552 links on 24 HSA web pages found 6 failures, and every one points to this checker. The 404 page offers generic help only.
+The tools page, and result screens in all three self-help tools (51 of 52 risk-class results, 12 of 18 grouping results, 1 of 3 'is it a medical device' results), link to the requirements checker. Both targets return HTTP 404. A link audit of 560 links on 24 HSA web pages (552 checked over HTTP, 8 mailto links not checked) found 6 failures, and every one points to this checker. The 404 page offers generic help only.
 
 Evidence:
 
-- [S04](https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/) HSA - Medical device registration and licensing tools: link "Registration and licensing requirements" points to `https://www.hsa.gov.sg/medical-devices/registration/requirements`
-- [S04](https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/) HSA - Medical device registration and licensing tools: "Find out the requirements for your device's registration route and whether you need to apply for a licence."
+- [S04](https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/) HSA - Medical device registration and licensing tools: link "Registration and licensing requirements" points to `https://www.hsa.gov.sg/medical-devices/registration/requirements` ([archived copy, 2026-06-12](https://web.archive.org/web/20260612145127/https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/))
+- [S04](https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/) HSA - Medical device registration and licensing tools: "Find out the requirements for your device's registration route and whether you need to apply for a licence." ([archived copy, 2026-06-12](https://web.archive.org/web/20260612145127/https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/))
 - [S18](https://selfhelp.hsa.gov.sg/hsa/mdc/is-medical-device) HSA Self Help Tools - Is it a medical device: link "check the registration and licensing requirements" points to `https://selfhelp.hsa.gov.sg/hsa/mdc/medical-devices`
 - [S19](https://selfhelp.hsa.gov.sg/hsa/mdc/risk-classification) HSA Self Help Tools - Medical device risk classification tool: link "registration and licensing requirements" points to `https://selfhelp.hsa.gov.sg/hsa/mdc/medical-devices`
 - [S20](https://selfhelp.hsa.gov.sg/hsa/mdc/mdc-grouping) HSA Self Help Tools - Medical device grouping tool: link "check your registration and licensing requirements" points to `https://selfhelp.hsa.gov.sg/hsa/mdc/medical-devices`
@@ -80,12 +82,12 @@ The Registration overview lists 'No prior rejection/withdrawal' as a condition f
 
 Evidence:
 
-- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): "No prior rejection/withdrawal by us or any overseas reference regulatory agencies"
-- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): "ECR-2/EDR: Approval from at least two of our overseas reference regulatory agencies No prior rejection/withdrawal by us or any overseas reference regulatory agencies"
-- [S06](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/) HSA - Register Class B medical device via immediate route: "Condition 2 Approved by at least two of our independent reference regulatory agencies ."
-- [S06](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/) HSA - Register Class B medical device via immediate route: "Note: If your Class B medical device is approved by both EU and TGA, it will only be considered one approval."
-- [S08](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-expedited-registration/) HSA - Register Class C medical device via expedited route: "Approvals from EU and TGA will qualify as independent reference regulatory agency approvals only if devices have been reviewed and approved by the respective agencies and not registered based on the Mutual Recognition Agreement (MRA)."
-- [S10](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-d-expedited-registration/) HSA - Register Class D medical device via expedited route: "You are eligible to register your Class D medical device via the expedited evaluation route (EDR) if it is currently approved by at least two of our independent reference regulatory agencies ."
+- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): "No prior rejection/withdrawal by us or any overseas reference regulatory agencies" ([archived copy, 2026-07-13](https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/))
+- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): "ECR-2/EDR: Approval from at least two of our overseas reference regulatory agencies No prior rejection/withdrawal by us or any overseas reference regulatory agencies" ([archived copy, 2026-07-13](https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/))
+- [S06](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/) HSA - Register Class B medical device via immediate route: "Condition 2 Approved by at least two of our independent reference regulatory agencies ." ([archived copy, 2026-06-08](https://web.archive.org/web/20260608115228/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/))
+- [S06](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/) HSA - Register Class B medical device via immediate route: "Note: If your Class B medical device is approved by both EU and TGA, it will only be considered one approval." ([archived copy, 2026-06-08](https://web.archive.org/web/20260608115228/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/))
+- [S08](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-expedited-registration/) HSA - Register Class C medical device via expedited route: "Approvals from EU and TGA will qualify as independent reference regulatory agency approvals only if devices have been reviewed and approved by the respective agencies and not registered based on the Mutual Recognition Agreement (MRA)." ([archived copy, 2026-06-10](https://web.archive.org/web/20260610212048/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-expedited-registration/))
+- [S10](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-d-expedited-registration/) HSA - Register Class D medical device via expedited route: "You are eligible to register your Class D medical device via the expedited evaluation route (EDR) if it is currently approved by at least two of our independent reference regulatory agencies ." ([archived copy, 2026-06-14](https://web.archive.org/web/20260614171344/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-d-expedited-registration/))
 
 Recommendation: Hold route conditions in one source and render the overview table and every guide from it. State the EU/TGA counting rules in the overview table.
 
@@ -97,9 +99,9 @@ With the checker unreachable, persona P1 (Class B importer and wholesaler) needs
 
 Evidence:
 
-- [S14](https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/) HSA - Apply for a medical device dealer's licence: "Licensed importers require a Wholesaler's licence for wholesale supply."
-- [S14](https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/) HSA - Apply for a medical device dealer's licence: "However, a wholesaler's licence is not required for supply to end-users, such as in a retail store."
-- [S14](https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/) HSA - Apply for a medical device dealer's licence: "Licensed manufacturers do not require a Wholesaler's licence to supply medical devices which are manufactured under their Manufacturer's licence."
+- [S14](https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/) HSA - Apply for a medical device dealer's licence: "Licensed importers require a Wholesaler's licence for wholesale supply." ([archived copy, 2026-06-14](https://web.archive.org/web/20260614164750/https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/))
+- [S14](https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/) HSA - Apply for a medical device dealer's licence: "However, a wholesaler's licence is not required for supply to end-users, such as in a retail store." ([archived copy, 2026-06-14](https://web.archive.org/web/20260614164750/https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/))
+- [S14](https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/) HSA - Apply for a medical device dealer's licence: "Licensed manufacturers do not require a Wholesaler's licence to supply medical devices which are manufactured under their Manufacturer's licence." ([archived copy, 2026-06-14](https://web.archive.org/web/20260614164750/https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/))
 - computed: journeyA.asis: 19 page loads, 13 distinct, 2 dead ends, 9 decisions (`data/klm/results.json`)
 
 Recommendation: Provide one pre-application summary that combines activity, class and approvals into licences, route, fees, documents and access steps (prototyped in docs/).
@@ -112,10 +114,10 @@ Dealers download a Word form and email it, keeping the email under 2 MB. There i
 
 Evidence:
 
-- [S24](https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/) HSA - Adverse events reporting of medical devices (for companies): "Keep the email size under 2MB."
+- [S24](https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/) HSA - Adverse events reporting of medical devices (for companies): "Keep the email size under 2MB." ([archived copy, 2026-06-14](https://web.archive.org/web/20260614104927/https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/))
 - [S25](https://go.gov.sg/form-mdc-ade-003-medical-device-adverse-event-reporting-form-1-rev002) HSA - Mandatory Medical Device Adverse Event Reporting Form for Medical Device Dealers (FORM-MDC-ADE-003): "This form, once completed, and any attachment should be submitted via email to hsa_medical_device@hsa.gov.sg."
 - [S25](https://go.gov.sg/form-mdc-ade-003-medical-device-adverse-event-reporting-form-1-rev002) HSA - Mandatory Medical Device Adverse Event Reporting Form for Medical Device Dealers (FORM-MDC-ADE-003): "This reference no. would only become available after the initial report has been submitted."
-- [S23](https://www.hsa.gov.sg/adverse-events/) HSA - Report adverse events (landing): link "E-form" points to `https://form.gov.sg/#!/5c89abc277ef5300174c1ec7`
+- [S23](https://www.hsa.gov.sg/adverse-events/) HSA - Report adverse events (landing): link "E-form" points to `https://form.gov.sg/#!/5c89abc277ef5300174c1ec7` ([archived copy, 2026-10-12](https://web.archive.org/web/20261012085715/https://www.hsa.gov.sg/adverse-events/))
 
 Recommendation: Move the dealer report to a structured online form (FormSG or SHARE) with an immediate acknowledgement and reference number, attachments beyond 2 MB, and a link between initial, follow-up and final reports.
 
@@ -127,8 +129,8 @@ The Class B immediate guide warns that an eligibility error forfeits the registr
 
 Evidence:
 
-- [S06](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/) HSA - Register Class B medical device via immediate route: "Error in the eligibility will result in a forfeit of your device registration, and you will be required to re-apply for the registration via other evaluation routes (fees apply)."
-- [S28](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-immediate-registration/) HSA - Register Class C medical device via immediate route: "Fees paid previously are non-refundable."
+- [S06](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/) HSA - Register Class B medical device via immediate route: "Error in the eligibility will result in a forfeit of your device registration, and you will be required to re-apply for the registration via other evaluation routes (fees apply)." ([archived copy, 2026-06-08](https://web.archive.org/web/20260608115228/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/))
+- [S28](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-immediate-registration/) HSA - Register Class C medical device via immediate route: "Fees paid previously are non-refundable." ([archived copy, 2026-06-17](https://web.archive.org/web/20260617064939/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-immediate-registration/))
 
 Recommendation: Show the consequence next to the route in the overview table and on the fees page, before the user commits.
 
@@ -140,8 +142,8 @@ On the Class B immediate guide, 'Standalone medical mobile applications' appears
 
 Evidence:
 
-- [S06](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/) HSA - Register Class B medical device via immediate route: "Standalone medical mobile applications It is solely a standalone medical mobile application."
-- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): "Immediate routes, solely for standalone medical mobile applications: Class B Class C"
+- [S06](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/) HSA - Register Class B medical device via immediate route: "Standalone medical mobile applications It is solely a standalone medical mobile application." ([archived copy, 2026-06-08](https://web.archive.org/web/20260608115228/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-immediate-registration/))
+- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): "Immediate routes, solely for standalone medical mobile applications: Class B Class C" ([archived copy, 2026-07-13](https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/))
 
 Recommendation: Label it 'Route for standalone medical mobile applications' and list its full conditions, as the overview table does.
 
@@ -153,7 +155,7 @@ The fees page says fees are payable via GIRO or eNETS. The April 2026 Quick Guid
 
 Evidence:
 
-- [S11](https://www.hsa.gov.sg/medical-devices/fees/) HSA - Fees and turnaround time for medical devices: "Fees are payable via GIRO ( apply eGIRO ) or eNETS"
+- [S11](https://www.hsa.gov.sg/medical-devices/fees/) HSA - Fees and turnaround time for medical devices: "Fees are payable via GIRO ( apply eGIRO ) or eNETS" ([archived copy, 2026-06-12](https://web.archive.org/web/20260612144728/https://www.hsa.gov.sg/medical-devices/fees/))
 - [S17](https://go.gov.sg/quickguideapr2026) HSA - Quick Guide to Medical Device Product Registration and Dealer Licensing, R9 (2026 Apr): "Payment modes available: GIRO or Online Payment (card or PayNow through STRIPE payment portal)"
 - [S17](https://go.gov.sg/quickguideapr2026) HSA - Quick Guide to Medical Device Product Registration and Dealer Licensing, R9 (2026 Apr): "Cheques will not be accepted for any transaction."
 
@@ -167,7 +169,7 @@ The fees table lists a $560 application fee for any Class B, C or D registration
 
 Evidence:
 
-- [S11](https://www.hsa.gov.sg/medical-devices/fees/) HSA - Fees and turnaround time for medical devices: "Application fees for any Class B, C or D device registration $560"
+- [S11](https://www.hsa.gov.sg/medical-devices/fees/) HSA - Fees and turnaround time for medical devices: "Application fees for any Class B, C or D device registration $560" ([archived copy, 2026-06-12](https://web.archive.org/web/20260612144728/https://www.hsa.gov.sg/medical-devices/fees/))
 
 Recommendation: Show 'application + evaluation = total' per route, and offer a worked example for a common case.
 
@@ -179,13 +181,13 @@ In the route guides and licence page, links such as 'Letter of Authorisation', '
 
 Evidence:
 
-- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: link "Letter of Authorisation" points to `https://www.hsa.gov.sg/medical-devices/guidance-documents/`
-- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: link "Declaration of Conformity" points to `https://www.hsa.gov.sg/medical-devices/guidance-documents/`
-- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: link "List of Configurations of medical devices" points to `https://www.hsa.gov.sg/medical-devices/guidance-documents/`
-- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: link "Essential Principles Checklist" points to `https://www.hsa.gov.sg/medical-devices/guidance-documents/`
-- [S14](https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/) HSA - Apply for a medical device dealer's licence: link "Declaration of Conformity to a QMS" points to `https://www.hsa.gov.sg/medical-devices/guidance-documents/`
-- [S14](https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/) HSA - Apply for a medical device dealer's licence: link "Guide to new application for medical device dealer's licence" points to `https://www.hsa.gov.sg/e-services/share-medical-device/`
-- [S16](https://www.hsa.gov.sg/e-services/share-medical-device/) HSA - SHARE (Medical Device) e-service page: "HSA SHARE Applicant User Manual [PDF, 25.8 MB]"
+- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: link "Letter of Authorisation" points to `https://www.hsa.gov.sg/medical-devices/guidance-documents/` ([archived copy, 2026-06-17](https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/))
+- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: link "Declaration of Conformity" points to `https://www.hsa.gov.sg/medical-devices/guidance-documents/` ([archived copy, 2026-06-17](https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/))
+- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: link "List of Configurations of medical devices" points to `https://www.hsa.gov.sg/medical-devices/guidance-documents/` ([archived copy, 2026-06-17](https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/))
+- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: link "Essential Principles Checklist" points to `https://www.hsa.gov.sg/medical-devices/guidance-documents/` ([archived copy, 2026-06-17](https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/))
+- [S14](https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/) HSA - Apply for a medical device dealer's licence: link "Declaration of Conformity to a QMS" points to `https://www.hsa.gov.sg/medical-devices/guidance-documents/` ([archived copy, 2026-06-14](https://web.archive.org/web/20260614164750/https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/))
+- [S14](https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/) HSA - Apply for a medical device dealer's licence: link "Guide to new application for medical device dealer's licence" points to `https://www.hsa.gov.sg/e-services/share-medical-device/` ([archived copy, 2026-06-14](https://web.archive.org/web/20260614164750/https://www.hsa.gov.sg/medical-devices/manufacturing-import-and-supply/dealers-licence/apply/))
+- [S16](https://www.hsa.gov.sg/e-services/share-medical-device/) HSA - SHARE (Medical Device) e-service page: "HSA SHARE Applicant User Manual [PDF, 25.8 MB]" ([archived copy, 2026-09-14](https://web.archive.org/web/20260914160037/https://www.hsa.gov.sg/e-services/share-medical-device/))
 
 Recommendation: Link each name directly to its template or the relevant section, with format and size in the link text.
 
@@ -234,7 +236,7 @@ The web page's timeline uses 'Possible death or serious injury if the adverse ev
 
 Evidence:
 
-- [S24](https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/) HSA - Adverse events reporting of medical devices (for companies): "Possible death or serious injury if the adverse event were to recur"
+- [S24](https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/) HSA - Adverse events reporting of medical devices (for companies): "Possible death or serious injury if the adverse event were to recur" ([archived copy, 2026-06-14](https://web.archive.org/web/20260614104927/https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/))
 - [S25](https://go.gov.sg/form-mdc-ade-003-medical-device-adverse-event-reporting-form-1-rev002) HSA - Mandatory Medical Device Adverse Event Reporting Form for Medical Device Dealers (FORM-MDC-ADE-003): "AE Category * Serious Public Health Threat Death Serious Deterioration in State of Health Others"
 
 Recommendation: Use the web page's category names in the form, with the deadline next to each option.
@@ -272,10 +274,10 @@ Recommendation: Use a Yes/No radio question.
 
 Evidence:
 
-- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): "Approval from at least one of our overseas reference regulatory agencies"
-- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: "approved by at least one of our independent reference regulatory agencies"
+- [S03](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/) HSA - Registration overview of medical devices (evaluation routes): "Approval from at least one of our overseas reference regulatory agencies" ([archived copy, 2026-07-13](https://web.archive.org/web/20260713220900/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/overview/))
+- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: "approved by at least one of our independent reference regulatory agencies" ([archived copy, 2026-06-17](https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/))
 - [S25](https://go.gov.sg/form-mdc-ade-003-medical-device-adverse-event-reporting-form-1-rev002) HSA - Mandatory Medical Device Adverse Event Reporting Form for Medical Device Dealers (FORM-MDC-ADE-003): "Special Authorisation Route Licence No."
-- [S16](https://www.hsa.gov.sg/e-services/share-medical-device/) HSA - SHARE (Medical Device) e-service page: "Special Access Route (SAR)"
+- [S16](https://www.hsa.gov.sg/e-services/share-medical-device/) HSA - SHARE (Medical Device) e-service page: "Special Access Route (SAR)" ([archived copy, 2026-09-14](https://web.archive.org/web/20260914160037/https://www.hsa.gov.sg/e-services/share-medical-device/))
 
 Recommendation: Adopt one term per concept across pages and forms.
 
@@ -326,8 +328,8 @@ The page says 'With effect from 2 June 2026, HSA will be obsoleting the IVD Clus
 
 Evidence:
 
-- [S22](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/grouping/ivd-cluster/) HSA - Grouping medical devices as an IVD Cluster: "With effect from 2 June 2026, HSA will be obsoleting the "IVD Cluster" grouping currently found in GN-12-1."
-- [S22](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/grouping/ivd-cluster/) HSA - Grouping medical devices as an IVD Cluster: "The feedback window is open until 31 July 2026 ."
+- [S22](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/grouping/ivd-cluster/) HSA - Grouping medical devices as an IVD Cluster: "With effect from 2 June 2026, HSA will be obsoleting the "IVD Cluster" grouping currently found in GN-12-1." ([archived copy, 2026-06-16](https://web.archive.org/web/20260616122939/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/grouping/ivd-cluster/))
+- [S22](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/grouping/ivd-cluster/) HSA - Grouping medical devices as an IVD Cluster: "The feedback window is open until 31 July 2026 ." ([archived copy, 2026-06-16](https://web.archive.org/web/20260616122939/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/grouping/ivd-cluster/))
 - [S20](https://selfhelp.hsa.gov.sg/hsa/mdc/mdc-grouping) HSA Self Help Tools - Medical device grouping tool: "In accordance with GN-12-1 R3, IVD Cluster grouping has been removed and is no longer applicable."
 
 Recommendation: Rewrite in the past tense, or retire the page and redirect to the grouping guidance.
@@ -340,9 +342,9 @@ The Class C abridged guide lists 'MSDAP' for MDSAP. The Class D expedited guide 
 
 Evidence:
 
-- [S09](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-abridged-registration/) HSA - Register Class C medical device via abridged route: "ISO 13485 MSDAP"
-- [S10](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-d-expedited-registration/) HSA - Register Class D medical device via expedited route: "Proof of at least one Quality Management System, for example:"
-- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: "Proof of at least one Quality Management System below:"
+- [S09](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-abridged-registration/) HSA - Register Class C medical device via abridged route: "ISO 13485 MSDAP" ([archived copy, 2026-06-16](https://web.archive.org/web/20260616125517/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-c-abridged-registration/))
+- [S10](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-d-expedited-registration/) HSA - Register Class D medical device via expedited route: "Proof of at least one Quality Management System, for example:" ([archived copy, 2026-06-14](https://web.archive.org/web/20260614171344/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-d-expedited-registration/))
+- [S07](https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/) HSA - Register Class B medical device via abridged route: "Proof of at least one Quality Management System below:" ([archived copy, 2026-06-17](https://web.archive.org/web/20260617193052/https://www.hsa.gov.sg/medical-devices/registration-of-medical-devices/register-your-device/guides/class-b-abridged-registration/))
 
 Recommendation: Correct the typo and use the same wording in every guide.
 
@@ -354,8 +356,8 @@ Other HSA downloads are labelled like 'Download form [PDF, 297 KB]'. The Quick G
 
 Evidence:
 
-- [S02](https://www.hsa.gov.sg/medical-devices/regulatory-overview/) HSA - Regulatory overview (medical devices): link "Quick Guide" points to `https://go.gov.sg/quickguideapr2026`
-- [S23](https://www.hsa.gov.sg/adverse-events/) HSA - Report adverse events (landing): "Download form [PDF, 297 KB]"
+- [S02](https://www.hsa.gov.sg/medical-devices/regulatory-overview/) HSA - Regulatory overview (medical devices): link "Quick Guide" points to `https://go.gov.sg/quickguideapr2026` ([archived copy, 2026-06-14](https://web.archive.org/web/20260614103859/https://www.hsa.gov.sg/medical-devices/regulatory-overview/))
+- [S23](https://www.hsa.gov.sg/adverse-events/) HSA - Report adverse events (landing): "Download form [PDF, 297 KB]" ([archived copy, 2026-10-12](https://web.archive.org/web/20261012085715/https://www.hsa.gov.sg/adverse-events/))
 
 Recommendation: Label it '[PDF, 4 pages]' and provide the key steps as HTML.
 
@@ -398,8 +400,8 @@ On 'Report adverse events', the Medical Devices row of the online submission tab
 
 Evidence:
 
-- [S23](https://www.hsa.gov.sg/adverse-events/) HSA - Report adverse events (landing): "All product types except vaccines and medical devices"
-- [S23](https://www.hsa.gov.sg/adverse-events/) HSA - Report adverse events (landing): link "For medical device companies" points to `https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/`
+- [S23](https://www.hsa.gov.sg/adverse-events/) HSA - Report adverse events (landing): "All product types except vaccines and medical devices" ([archived copy, 2026-10-12](https://web.archive.org/web/20261012085715/https://www.hsa.gov.sg/adverse-events/))
+- [S23](https://www.hsa.gov.sg/adverse-events/) HSA - Report adverse events (landing): link "For medical device companies" points to `https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/` ([archived copy, 2026-10-12](https://web.archive.org/web/20261012085715/https://www.hsa.gov.sg/adverse-events/))
 
 Recommendation: Add 'Companies: use the dealer form' in the Medical Devices row.
 
@@ -411,7 +413,7 @@ The tools page lists 'Is it a medical device', a risk classification tool, a gro
 
 Evidence:
 
-- [S04](https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/) HSA - Medical device registration and licensing tools: "Medical device grouping tool"
+- [S04](https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/) HSA - Medical device registration and licensing tools: "Medical device grouping tool" ([archived copy, 2026-06-12](https://web.archive.org/web/20260612145127/https://www.hsa.gov.sg/medical-devices/tools-and-resources/tools/))
 - [S19](https://selfhelp.hsa.gov.sg/hsa/mdc/risk-classification) HSA Self Help Tools - Medical device risk classification tool: "New tool available: Try our AI-enabled risk classification tool (beta)"
 
 Recommendation: Keep the tools; reconnect the checker.
@@ -448,6 +450,6 @@ The companies' adverse event page sets out what to report and when (48 hours, 10
 
 Evidence:
 
-- [S24](https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/) HSA - Adverse events reporting of medical devices (for companies): "The clock for reporting starts as soon as any personnel in your company"
+- [S24](https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/) HSA - Adverse events reporting of medical devices (for companies): "The clock for reporting starts as soon as any personnel in your company" ([archived copy, 2026-06-14](https://web.archive.org/web/20260614104927/https://www.hsa.gov.sg/medical-devices/advertisement-post-market-surveillance-and-safety-monitoring/report-adverse-events/))
 
 Recommendation: Show the same table inside the dealer form (B-04).

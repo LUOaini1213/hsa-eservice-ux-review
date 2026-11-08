@@ -5,9 +5,9 @@
   "description": "Independent heuristic review, task analysis and redesign prototype of public HSA medical device e-service journeys.",
   "type": "module",
   "license": "MIT",
-  "engines": { "node": ">=20" },
+  "engines": { "node": ">=22" },
   "scripts": {
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --test \"tests/*.test.mjs\"",
     "mutate": "node tests/mutate.mjs",
     "klm": "node scripts/klm.mjs",
     "issues": "node scripts/render_issues.mjs"

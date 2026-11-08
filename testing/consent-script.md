@@ -2,7 +2,7 @@
 
 "Thank you for helping. I'm testing two ways of finding information about bringing a medical device to market in Singapore: some public pages on the Health Sciences Authority website, and a prototype I built. I'm testing the designs, not you. There are no wrong answers, and if something is hard to find, that tells me the design needs work.
 
-This is a personal project for my portfolio. It is not run by or for HSA.
+This is an independent personal project. It is not run by or for HSA.
 
 The session takes about 45 minutes. I'll ask you to do three short tasks and think aloud while you work, then answer a few rating questions.
 
